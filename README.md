@@ -1,28 +1,26 @@
-# Turborepo starter
+# Monorepo
 
-This is an official starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest
-```
-
-## What's inside?
-
-This Turborepo includes the following packages/apps:
+This repository is a monorepo managed by Turborepo, housing three micro frontends and various shared packages for efficient development and code reuse.
 
 ### Apps and Packages
 
 - `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
+- `frontend`: This directory houses the code for the primary application's micro frontend.
+- `frontend-2`: This directory contains the code for the secondary application's micro frontend.
+- `@monorepo/shared-styles` : This package contains shared styles, including variables, typography, and other stylistic elements.
+- `@monorepo/swiper-wrapper` : This custom package encapsulates Swiper carousel functionality for easy integration into micro frontends.
+- `@monorepo/math-helpers` : This package offers basic arithmetic functionality reusable by micro frontends.
 - `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+### Tech Stack:
+
+- Next
+- Typescript
+- Javascript
+- SCSS
+- CSS
 
 ### Utilities
 
@@ -38,7 +36,7 @@ To build all apps and packages, run the following command:
 
 ```
 cd my-turborepo
-pnpm build
+npm build
 ```
 
 ### Develop
@@ -47,7 +45,7 @@ To develop all apps and packages, run the following command:
 
 ```
 cd my-turborepo
-pnpm dev
+npm dev
 ```
 
 ### Remote Caching
