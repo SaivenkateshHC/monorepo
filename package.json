@@ -2,7 +2,7 @@
   "name": "monoRepoDemo",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "build": "turbo build --filter=apps/*,packages/*",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
