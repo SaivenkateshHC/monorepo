@@ -2,17 +2,57 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
-    },
-    "lint": {
-      "dependsOn": ["^lint"]
-    },
     "dev": {
-      "cache": false,
-      "persistent": true
+      "watch": "**/*.{js,ts,jsx,tsx}",
+      "tasks": [
+        { "type": "@vercel/build", "watch": true },
+        { "type": "@vercel/run", "watch": true }
+      ]
     },
-    "type-check":{}
+    "build": {
+      "watch": false,
+      "tasks": [{ "type": "@vercel/build" }]
+    }
+  },
+  "prebuild": {
+    "tasks": [{ "type": "eslint", "src": "**/*.{js,ts,jsx,tsx}" }]
+  },
+  "projects": {
+    "docs": {
+      "type": "next",
+      "src": "./docs"
+    },
+    "frontend": {
+      "type": "custom",
+      "src": "./frontend"
+    },
+    "frontend-2": {
+      "type": "custom",
+      "src": "./frontend-2"
+    },
+    "@monorepo/shared-styles": {
+      "type": "lib",
+      "src": "./packages/shared-styles"
+    },
+    "@monorepo/swiper-wrapper": {
+      "type": "lib",
+      "src": "./packages/swiper-wrapper"
+    },
+    "@monorepo/math-helpers": {
+      "type": "lib",
+      "src": "./packages/math-helpers"
+    },
+    "@repo/ui": {
+      "type": "link",
+      "src": "../repo/ui"
+    },
+    "@repo/eslint-config": {
+      "type": "link",
+      "src": "../repo/eslint-config"
+    },
+    "@repo/typescript-config": {
+      "type": "link",
+      "src": "../repo/typescript-config"
+    }
   }
 }
