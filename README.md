@@ -47,6 +47,12 @@ To develop all apps and packages, run the following command:
 cd my-turborepo
 npm dev
 ```
+### Deployment
+
+Deployed using vercel. The apps in monorepo has been deployed seperately. 
+- Docs : [Docs](https://monorepo-docs-blush.vercel.app/)
+- Frontend : [Frontend](https://monorepo-frontend-vert.vercel.app/)
+- Frontend-2 : [Frontend-2](https://monorepo-frontend-2.vercel.app/)
 
 ### Remote Caching
 
