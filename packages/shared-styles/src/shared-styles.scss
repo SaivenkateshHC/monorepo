@@ -1,0 +1,38 @@
+// shared-styles.scss
+
+// Variables
+$primary-color: #333;
+$primary-background-color: #f0f0f0;
+
+// Mixins
+@mixin container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+// Typography
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+// Colors
+.primary-text {
+    color: $primary-color;
+}
+
+.primary-background {
+    background-color: $primary-background-color;
+}
+
+// Other common styles
+.container {
+    @include container;
+}
+
+.typography-h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color:aquamarine
+}

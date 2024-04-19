@@ -1,0 +1,9 @@
+.mySwiper{
+    max-width: 80dvw;
+    overflow: hidden;
+    .swiper-slide{
+        max-width: 500px;
+        height: 100px;
+        border: 1px snow solid;
+    }
+}
